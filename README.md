@@ -3,24 +3,25 @@
 something something sEcUrItY, something something
 
 If your university or workplace hosts emails on services that need oauth-v2,
-if you can't obtain a client\_id and client\_secret,
+if you can't obtain a client_id and client_secret,
 if you use (neo)mutt,
 you've come to the right place.
 
-**DISCLAIMER**
-Make sure you don't break any rules set up by your workplace / university.
+
+# DISCLAIMER
+
+Make sure you don't break any rules set up by your workplace/university.
 I have no responsibilities whatsoever on you getting fired/kicked out of uni.
 If you follow this guide and something goes bad you are on your own.
-**END OF DISCLAIMER**
 
 
 # <u>Prerequisites</u>:
 
 - thunderbird/icedove
-- neo)mutt (if you are new to this use mutt-wizard to set it up)
+- (neo)mutt (if you are new to this use mutt-wizard to set it up)
 - gpg
 - pass (the standard unix password-manager)
-- mutt\_oauth2.py
+- mutt_oauth2.py
 - cyrus-sasl
 - cyrus-sasl-xoauth2
 
@@ -102,26 +103,26 @@ Now that we have installed everything we need let's set everything up.
 
 - Open thunderbird/icedove and login with your work/uni account.
 
-- Check [here](https://hg.mozilla.org/comm-central/file/tip/mailnews/base/src/OAuth2Providers.jsm) your client\_id and (if it's there) your client\_secret.
+- Check [here](https://hg.mozilla.org/comm-central/file/tip/mailnews/base/src/OAuth2Providers.jsm) your client_id and (if it's there) your client_secret.
 
-- Open mutt\_oauth2.py and add your gpg identity (the email to be clear)
-  inside the empty "" in ENCRYPTION\_PIPE,
-  add your client\_id and if known your client\_secret in the corresponding lines.
+- Open mutt_oauth2.py and add your gpg identity (the email to be clear)
+  inside the empty "" in ENCRYPTION_PIPE,
+  add your client_id and if known your client_secret in the corresponding lines.
 
 - if your registrar is not one of google or microsoft you could try adding the
   necessary registration infos in a new list inside this python script filling it
   with the details you can find [here](https://hg.mozilla.org/comm-central/file/tip/mailnews/base/src/OAuth2Providers.jsm)
 
-- Make mutt\_oauth2.py executable and run it, follow the instructions and don't
+- Make mutt_oauth2.py executable and run it, follow the instructions and don't
   give up if it doesn't work the first time. You may need to select a different
-  "preferred Oauth2 flow". Chose a TOKEN\_FILENAME that makes sense.
+  "preferred Oauth2 flow". Chose a TOKEN_FILENAME that makes sense.
 ```sh
-$ chmod +x mutt\_oauth2.py
-$ ./mutt\_oauth2.py TOKEN_FILENAME --verbose --authorize
+$ chmod +x mutt_oauth2.py
+$ ./mutt_oauth2.py TOKEN_FILENAME --verbose --authorize
 ```
 
 - Edit your mutt configuration file. If you used mutt-wizard you'll find the account-specific
-  configuration file in ~/.config/mutt/accounts/EMAIL\_ACCOUNT.
+  configuration file in ~/.config/mutt/accounts/EMAIL_ACCOUNT.
   Add the following:
 ```lua
 set imap_authenticators = "xoauth2"
@@ -131,7 +132,7 @@ set smtp_oauth_refresh_command = ${imap_oauth_refresh_command}
 ```
 
 - Edit your ~/.mbsyncrc accordingly in the corresponding email section
-  PassCmd "/some/local/path/mutt\_oauth2.py /some/local/path/TOKEN\_FILENAME"
+  PassCmd "/some/local/path/mutt_oauth2.py /some/local/path/TOKEN_FILENAME"
   AuthMechs XOAUTH2
 
 - Open (neo)mutt and see if it works.
@@ -154,7 +155,7 @@ Again **STRIP IT OF ANY PERSONAL INFORMATION FIRST**
 
 # This guide was written thanks to:
 
-- Alexander Perlis and his [mutt\_oauth2](https://gitlab.com/muttmua/mutt/-/blob/master/contrib/mutt_oauth2.py) script
+- Alexander Perlis and his [mutt_oauth2](https://gitlab.com/muttmua/mutt/-/blob/master/contrib/mutt_oauth2.py) script
 - Geoff Lankow's [Oauth2Providers.jsm](https://hg.mozilla.org/comm-central/file/tip/mailnews/base/src/OAuth2Providers.jsm)
 - Luke Smith's [mutt-wizard](https://muttwizard.com/)
 - Mbsync's [man-page](https://manpages.org/mbsync)
