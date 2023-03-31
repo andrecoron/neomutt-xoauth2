@@ -10,7 +10,7 @@ you've come to the right place.
 
 # DISCLAIMER
 
-Make sure you don't break any rules set up by your workplace/university.
+Make sure you don't break any rules set up by your workplace / university.
 I have no responsibilities whatsoever on you getting fired/kicked out of uni.
 If you follow this guide and something goes bad you are on your own.
 
@@ -44,11 +44,15 @@ $ paru -Syu mutt-wizard cyrus-sasl-xoauth2-git
 Debian
 ```sh
 # apt update && apt upgrade
-# apt install thunderbird neomutt gpg pass cyrus-sasl git
+# apt install thunderbird neomutt gpg pass cyrus-sasl git curl isync msmtp ca-certificates
 $ git clone https://github.com/moriyoshi/cyrus-sasl-xoauth2
 $ cd cyrus-sasl-xoauth2
 $ ./autogen.sh
 $ ./configure
+$ make
+# make install
+$ git clone https://github.com/LukeSmithxyz/mutt-wizard
+$ cd mutt-wizard
 $ make
 # make install
 ```
@@ -56,11 +60,15 @@ $ make
 Fedora
 ```sh
 # dnf upgrade
-# dnf install thunderbird neomutt gpg pass cyrus-sasl git
+# dnf install thunderbird neomutt gpg pass cyrus-sasl git curl isync msmtp ca-certificates
 $ git clone https://github.com/moriyoshi/cyrus-sasl-xoauth2
 $ cd cyrus-sasl-xoauth2
 $ ./autogen.sh
 $ ./configure
+$ make
+# make install
+$ git clone https://github.com/LukeSmithxyz/mutt-wizard
+$ cd mutt-wizard
 $ make
 # make install
 ```
@@ -77,6 +85,10 @@ $ ./autogen.sh
 $ ./configure
 $ make
 # make install
+$ git clone https://github.com/LukeSmithxyz/mutt-wizard
+$ cd mutt-wizard
+$ make
+# make install
 ```
 
 OpenSUSE
@@ -85,11 +97,15 @@ OpenSUSE
 # zypper patch
 ### or
 # zypper update
-# zypper install thunderbird neomutt gpg pass cyrus-sasl git
+# zypper install thunderbird neomutt gpg pass cyrus-sasl git curl isync msmtp ca-certificates
 $ git clone https://github.com/moriyoshi/cyrus-sasl-xoauth2
 $ cd cyrus-sasl-xoauth2
 $ ./autogen.sh
 $ ./configure
+$ make
+# make install
+$ git clone https://github.com/LukeSmithxyz/mutt-wizard
+$ cd mutt-wizard
 $ make
 # make install
 ```
