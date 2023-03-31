@@ -116,8 +116,8 @@ Now that we have installed everything we need let's set everything up.
   give up if it doesn't work the first time. You may need to select a different
   "preferred Oauth2 flow". Chose a TOKEN\_FILENAME that makes sense.
 ```sh
-\$ chmod +x mutt\_oauth2.py
-\$ ./mutt\_oauth2.py TOKEN_FILENAME --verbose --authorize
+$ chmod +x mutt\_oauth2.py
+$ ./mutt\_oauth2.py TOKEN_FILENAME --verbose --authorize
 ```
 
 - Edit your mutt configuration file. If you used mutt-wizard you'll find the account-specific
@@ -150,3 +150,15 @@ If there wasn't anything wrong open an Issue here on github making sure to
 attach any config file you edited **STRIP IT OF ANY PERSONAL INFORMATION FIRST**
 and your shell history with anything related to this guide.
 Again **STRIP IT OF ANY PERSONAL INFORMATION FIRST**
+
+
+# This guide was written thanks to:
+
+- Alexander Perlis and his [mutt\_oauth2](https://gitlab.com/muttmua/mutt/-/blob/master/contrib/mutt_oauth2.py) script
+- Geoff Lankow's [Oauth2Providers.jsm](https://hg.mozilla.org/comm-central/file/tip/mailnews/base/src/OAuth2Providers.jsm)
+- Luke Smith's [mutt-wizard](https://muttwizard.com/)
+- Mbsync's [man-page](https://manpages.org/mbsync)
+- [Neovim](https://neovim.io/)
+- [Neorg](https://github.com/nvim-neorg/neorg), the true, native, Org-mode-like system for Neovim
+- Peter van Ormondt's [guide](https://www.vanormondt.net/~peter/blog/2021-03-16-mutt-office365-mfa.html) on neomutt and office365
+- [This](https://github.com/UvA-FNWI/M365-IMAP) repo that made me discover Oauth2Providers above
